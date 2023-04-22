@@ -19,39 +19,39 @@ if (!empty($_GET['action'])) {
                           'id'=>$product['Id']
                       ]
                   ];
-                  if (isset($_SESSION['cart_item']) &&!empty($_SESSION['cart_item'])) {
-                      if (in_array($product['Id'], array_keys($_SESSION['cart_item']))) {
-                          foreach ($_SESSION['cart_item'] as $key => $value) {
+                  if (isset($_SESSION['cart_item3']) &&!empty($_SESSION['cart_item3'])) {
+                      if (in_array($product['Id'], array_keys($_SESSION['cart_item3']))) {
+                          foreach ($_SESSION['cart_item3'] as $key => $value) {
                               if ($product['Id'] == $key) {
-                                  if (empty($_SESSION['cart_item'][$key]["Quantity"])) {
-                                      $_SESSION['cart_item'][$key]['Quantity'] = 0;
+                                  if (empty($_SESSION['cart_item3'][$key]["Quantity"])) {
+                                      $_SESSION['cart_item3'][$key]['Quantity'] = 0;
                                   }
-                                  $_SESSION['cart_item'][$key]['Quantity'] += $_POST['Quantity'];
+                                  $_SESSION['cart_item3'][$key]['Quantity'] += $_POST['Quantity'];
                               }
                           }
                       } else {
-                          $_SESSION['cart_item'] += $itemArray;
+                          $_SESSION['cart_item3'] += $itemArray;
                       }
                   } else {
-                      $_SESSION['cart_item'] = $itemArray;
+                      $_SESSION['cart_item3'] = $itemArray;
                   }
               }
           }
           break;
       case 'remove':
-          if (!empty($_SESSION['cart_item'])) {
-              foreach ($_SESSION['cart_item'] as $key => $value) {
+          if (!empty($_SESSION['cart_item3'])) {
+              foreach ($_SESSION['cart_item3'] as $key => $value) {
                   if ($_GET['Id'] == $key) {
-                      unset($_SESSION['cart_item'][$key]);
+                      unset($_SESSION['cart_item3'][$key]);
                   }
-                  if (empty($_SESSION['cart_item'])) {
-                      unset($_SESSION['cart_item']);
+                  if (empty($_SESSION['cart_item3'])) {
+                      unset($_SESSION['cart_item3']);
                   }
               }
           }
           break;
       case 'empty':
-          unset($_SESSION['cart_item']);
+          unset($_SESSION['cart_item3']);
           break;
   }
 }
@@ -89,8 +89,8 @@ if (!empty($_GET['action'])) {
             $total_price = 0;
             ?>
             <?php
-            if (isset($_SESSION['cart_item']) && !empty($_SESSION['cart_item'])){
-                foreach ($_SESSION['cart_item'] as $item) {
+            if (isset($_SESSION['cart_item3']) && !empty($_SESSION['cart_item3'])){
+                foreach ($_SESSION['cart_item3'] as $item) {
                     $item_price = $item['Quantity'] * $item['price'];
                     ?>
             <tr>
@@ -106,7 +106,7 @@ if (!empty($_GET['action'])) {
                 }
             }
 
-            if (isset($_SESSION['cart_item']) && !empty($_SESSION['cart_item'])){
+            if (isset($_SESSION['cart_item3']) && !empty($_SESSION['cart_item3'])){
                 ?>
                 <tr>
                     <td colspan="2" align="right">Total Quantity And Price:</td>
