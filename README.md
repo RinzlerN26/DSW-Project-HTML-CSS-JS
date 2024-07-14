@@ -5,8 +5,8 @@ A webapp for food ordering built with PHP and MySQL and front end implemented wi
 
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
-* ![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=000000)
-* ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=000000)
+* ![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php)
+* ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql)
 
 
 ### Prerequisites
