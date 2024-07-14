@@ -15,7 +15,7 @@ A webapp for food ordering built with PHP and MySQL and front end implemented wi
 
 ### Installation
 
-1. Clone the repo
+1. Clone the repo.
    
    ```sh
    git clone https://github.com/RinzlerN26/Trofi-Food-Delivery-Agent.git
@@ -29,7 +29,7 @@ A webapp for food ordering built with PHP and MySQL and front end implemented wi
   source ${fileDirname}\SQLScripts\Cart3.sql
   source ${fileDirname}\SQLScripts\Cart4.sql
    ```
-3. Start PHP development server
+3. Start PHP development server.
    
    ```sh
    php -S localhost:8080 -t ${fileDirname}
