@@ -19,7 +19,7 @@
   
   if ($count > 0) {
    
-    header("Location: Index.php");
+    header("Location: Restaurants/Index.php");
     exit(0);
   }
   else

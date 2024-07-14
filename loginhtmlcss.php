@@ -69,12 +69,12 @@
 		 <input type="password" class="box" name="password" value="" placeholder="Password">
 		 <input type="submit" class="box"  id="sub" value="Log In">
          <br><br>
-		 <p class="link">Don't Have an Account<br>
-			<a  href="Registration.php" >Sign up</a> here</p>
+		 <p class="link">Don't Have an Account?<br>
+			<a  href="Signup/Registration.php" >Sign up</a> here</p>
 		</form>
 
 		<div class="side">
-			<img src="login.jpg" alt="">
+			<img src="Assets/login.jpg" alt="">
 		</div>
 	</div>
 </body>

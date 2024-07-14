@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'Config2.php';
+require_once '../Config/Config4.php';
 // add, remove, empty
 if (!empty($_GET['action'])) {
   switch ($_GET['action']) {
@@ -19,39 +19,39 @@ if (!empty($_GET['action'])) {
                           'id'=>$product['Id']
                       ]
                   ];
-                  if (isset($_SESSION['cart_item1']) &&!empty($_SESSION['cart_item1'])) {
-                      if (in_array($product['Id'], array_keys($_SESSION['cart_item1']))) {
-                          foreach ($_SESSION['cart_item1'] as $key => $value) {
+                  if (isset($_SESSION['cart_item3']) &&!empty($_SESSION['cart_item3'])) {
+                      if (in_array($product['Id'], array_keys($_SESSION['cart_item3']))) {
+                          foreach ($_SESSION['cart_item3'] as $key => $value) {
                               if ($product['Id'] == $key) {
-                                  if (empty($_SESSION['cart_item1'][$key]["Quantity"])) {
-                                      $_SESSION['cart_item1'][$key]['Quantity'] = 0;
+                                  if (empty($_SESSION['cart_item3'][$key]["Quantity"])) {
+                                      $_SESSION['cart_item3'][$key]['Quantity'] = 0;
                                   }
-                                  $_SESSION['cart_item1'][$key]['Quantity'] += $_POST['Quantity'];
+                                  $_SESSION['cart_item3'][$key]['Quantity'] += $_POST['Quantity'];
                               }
                           }
                       } else {
-                          $_SESSION['cart_item1'] += $itemArray;
+                          $_SESSION['cart_item3'] += $itemArray;
                       }
                   } else {
-                      $_SESSION['cart_item1'] = $itemArray;
+                      $_SESSION['cart_item3'] = $itemArray;
                   }
               }
           }
           break;
       case 'remove':
-          if (!empty($_SESSION['cart_item1'])) {
-              foreach ($_SESSION['cart_item1'] as $key => $value) {
+          if (!empty($_SESSION['cart_item3'])) {
+              foreach ($_SESSION['cart_item3'] as $key => $value) {
                   if ($_GET['Id'] == $key) {
-                      unset($_SESSION['cart_item1'][$key]);
+                      unset($_SESSION['cart_item3'][$key]);
                   }
-                  if (empty($_SESSION['cart_item1'])) {
-                      unset($_SESSION['cart_item1']);
+                  if (empty($_SESSION['cart_item3'])) {
+                      unset($_SESSION['cart_item3']);
                   }
               }
           }
           break;
       case 'empty':
-          unset($_SESSION['cart_item1']);
+          unset($_SESSION['cart_item3']);
           break;
   }
 }
@@ -62,16 +62,16 @@ if (!empty($_GET['action'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Styles2.css">
+    <link rel="stylesheet" href="../CSS/Styles2.css">
     <title>Cart</title>
 </head>
 <body>
     <div class="container py-5">
     <div class="d-flex justify-content-between mb-2">
         <h3>Your Order</h3>
-        <a class="btn btn-success" href="Index.php">Return To Restaurants</a>
-        <a class="btn btn-success" href="Menu2.php">Go To Menu</a>
-        <a class="btn btn-danger" href="Cart2.php?action=empty">Remove All Items</a>
+        <a class="btn btn-success" href="../Restaurants/Index.php">Return To Restaurants</a>
+        <a class="btn btn-success" href="../Menu/Menu4.php">Go To Menu</a>
+        <a class="btn btn-danger" href="Cart4.php?action=empty">Remove All Items</a>
     </div>
     <div class="row">
         
@@ -89,8 +89,8 @@ if (!empty($_GET['action'])) {
             $total_price = 0;
             ?>
             <?php
-            if (isset($_SESSION['cart_item1']) && !empty($_SESSION['cart_item1'])){
-                foreach ($_SESSION['cart_item1'] as $item) {
+            if (isset($_SESSION['cart_item3']) && !empty($_SESSION['cart_item3'])){
+                foreach ($_SESSION['cart_item3'] as $item) {
                     $item_price = $item['Quantity'] * $item['price'];
                     ?>
             <tr>
@@ -98,7 +98,7 @@ if (!empty($_GET['action'])) {
                 <td class="text-left"><?= $item['Quantity'] ?></td>
                 <td class="text-right">₹<?= number_format($item['price'], 2) ?></td>
                 <td class="text-right">₹<?= number_format($item_price, 2) ?></td>
-                <td class="text-center"><a class="btn btn-danger" href="Cart2.php?action=remove&Id=<?=$item['id'];?>">X</a></td>
+                <td class="text-center"><a class="btn btn-danger" href="Cart4.php?action=remove&Id=<?=$item['id'];?>">X</a></td>
             </tr>
             <?php
                     $total_quantity += $item["Quantity"];
@@ -106,7 +106,7 @@ if (!empty($_GET['action'])) {
                 }
             }
 
-            if (isset($_SESSION['cart_item1']) && !empty($_SESSION['cart_item1'])){
+            if (isset($_SESSION['cart_item3']) && !empty($_SESSION['cart_item3'])){
                 ?>
                 <tr>
                     <td colspan="2" align="right">Total Quantity And Price:</td>
@@ -121,10 +121,10 @@ if (!empty($_GET['action'])) {
                 <td align="right"> </td>
                 <td align="right"></td>
                 <td></td>
-                <td align="right"><a class="btn btn-success" href="PaymentGateway.php">Proceed To Payment</a></td>
+                <td align="right"><a class="btn btn-success" href="../Gateway/PaymentGateway.php">Proceed To Payment</a></td>
                 </tr>
             <?php }
-                $_SESSION['total_price'] = $total_price;
+                 $_SESSION['total_price'] = $total_price;
                 ?>
           </tbody>
         </table>

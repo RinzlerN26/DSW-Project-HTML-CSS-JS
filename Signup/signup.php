@@ -22,7 +22,7 @@
   $sql="INSERT INTO `login` (`username`, `pass`, `email`) VALUES ('$username', '$password', '$email')";
   
   if($con->query($sql)==TRUE){
-  header("Location: loginhtmlcss.php");
+  header("Location: ../loginhtmlcss.php");
   exit(0);
   }
   }

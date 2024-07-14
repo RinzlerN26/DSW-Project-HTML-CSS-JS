@@ -88,7 +88,7 @@
 		</form>
 
 		<div class="side">
-			<img src="login.jpg" alt="">
+			<img src="../Assets/login.jpg" alt="">
 		</div>
 	</div>
 

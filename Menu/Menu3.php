@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'Config3.php';
+require_once '../Config/Config3.php';
 ?>
 
 <!DOCTYPE html>
@@ -8,7 +8,7 @@ require_once 'Config3.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Styles1.css" />
+    <link rel="stylesheet" href="../CSS/Styles1.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -30,9 +30,9 @@ require_once 'Config3.php';
        if (!empty($product)) {
            while ($row = mysqli_fetch_array($product)) { 
        ?>
-       <form action="Cart3.php?action=add&pid=<?= $row['Id'];?>" method="post">
+       <form action="../Cart/Cart3.php?action=add&pid=<?= $row['Id'];?>" method="post">
        <div class="food-items">
-           <img src="Sizzler.jpg">
+           <img src="../Assets/Sizzler.jpg">
            <div class="details">
               <div class="details-sub">
                 <h5><?= $row['PName']; ?></h5>
@@ -56,9 +56,9 @@ require_once 'Config3.php';
        if (!empty($product)) {
            while ($row = mysqli_fetch_array($product)) { 
        ?>
-       <form action="Cart3.php?action=add&pid=<?= $row['Id'];?>" method="post">
+       <form action="../Cart/Cart3.php?action=add&pid=<?= $row['Id'];?>" method="post">
        <div class="food-items">
-        <img src="Thali.jpg">
+        <img src="../Assets/Thali.jpg">
         <div class="details">
            <div class="details-sub">
              <h5><?= $row['PName']; ?></h5>

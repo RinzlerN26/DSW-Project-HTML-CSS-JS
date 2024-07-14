@@ -1,26 +1,27 @@
 <?php
 session_start();
-require_once 'Config2.php';
+require_once '../Config/Config1.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Styles1.css" />
+    <link rel="stylesheet" href="../CSS/Styles1.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap"
       rel="stylesheet"
     />
-    <title>Aggarwal's</title>
+    <title>Tea Point</title>
 </head>
 <body>
     <div class="menu">
        <div class="heading">
         
-        <h1>Aggarwal's</h1>
+        <h1>Tea Point</h1>
         <h3>&mdash;MENU &mdash;</h3>
        </div>
        <?php 
@@ -29,18 +30,18 @@ require_once 'Config2.php';
        if (!empty($product)) {
            while ($row = mysqli_fetch_array($product)) { 
        ?>
-       <form action="Cart2.php?action=add&pid=<?= $row['Id'];?>" method="post">
+       <form action="../Cart/Cart1.php?action=add&pid=<?= $row['Id'];?>" method="post">
        <div class="food-items">
-           <img src="Soup.jpeg">
+           <img src="../Assets/Burger.jpg">
            <div class="details">
               <div class="details-sub">
                 <h5><?= $row['PName']; ?></h5>
                 <h5 class="price">₹<?= number_format($row['Price'], 2); ?></h5>
               </div>
-              <p>Soup</p>
-              <input type="submit" name="Add to Cart" class="addtocart" value="Add to Cart">
-              <input type="text" name="Quantity" value="" placeholder="Quantity">  
-            </div>
+              <p>Burger</p>
+           <input type="submit" name="Add to Cart" class="addtocart" value="Add to Cart">
+           <input type="text" name="Quantity" value="" placeholder="Quantity">  
+           </div>
        </div>
        </form>
        <?php }
@@ -55,18 +56,18 @@ require_once 'Config2.php';
        if (!empty($product)) {
            while ($row = mysqli_fetch_array($product)) { 
        ?>
-       <form action="Cart2.php?action=add&pid=<?= $row['Id'];?>" method="post">
+       <form action="../Cart/Cart1.php?action=add&pid=<?= $row['Id'];?>" method="post">
        <div class="food-items">
-        <img src="Spaghetti.jpeg">
+        <img src="../Assets/Sandwich.jpeg">
         <div class="details">
            <div class="details-sub">
              <h5><?= $row['PName']; ?></h5>
              <h5 class="price">₹<?= number_format($row['Price'], 2); ?></h5>
            </div>
-           <p>Spaghetti</p>
-           <input type="submit" name="Add to Cart" class="addtocart" value="Add to Cart">
-           <input type="text" name="Quantity" value="" placeholder="Quantity">
-         </div>
+           <p>Sandwich</p>
+        <input type="submit" name="Add to Cart" class="addtocart" value="Add to Cart">
+        <input type="text" name="Quantity" value="" placeholder="Quantity"> 
+        </div>
     </div>
     </form>
     <?php }

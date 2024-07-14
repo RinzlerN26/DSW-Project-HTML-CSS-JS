@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="Styles.css" />
+    <link rel="stylesheet" href="../CSS/Styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,7 +19,7 @@
     <div class="MZy1T">
       <div class="_3XX_A">
         <a
-          href="Menu1.php"
+          href="../Menu/Menu1.php"
           class="_1j_Yo"
           ><div class="_1HEuF" style="margin-left: 50px;">
             <div class="_3FR5S">
@@ -56,7 +56,7 @@
       </div>
       <div class="_3XX_A">
         <a
-          href="Menu2.php"
+          href="../Menu/Menu2.php"
           class="_1j_Yo"
           ><div class="_1HEuF">
             <div class="_3FR5S">
@@ -93,7 +93,7 @@
       </div>
       <div class="_3XX_A">
         <a
-          href="Menu3.php"
+          href="../Menu/Menu3.php"
           class="_1j_Yo"
           ><div class="_1HEuF">
             <div class="_3FR5S">
@@ -130,7 +130,7 @@
       </div>
       <div class="_3XX_A">
         <a
-          href="Menu4.php"
+          href="../Menu/Menu4.php"
           class="_1j_Yo"
           ><div class="_1HEuF" style="margin-right: 50px;">
             <div class="_3FR5S">

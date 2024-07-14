@@ -6,7 +6,7 @@ $total_price=$_SESSION['total_price'];
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style_payment.css">
+    <link rel="stylesheet" href="../CSS/style_payment.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -31,7 +31,7 @@ $total_price=$_SESSION['total_price'];
 <body>
 <center>
     <div class="payment-container">
-        <form action="order_delivery.php" method="post">
+        <form action="../Order-Confirmation/order_delivery.php" method="post">
             <div class="payment">
                 <h1>Payment</h1>
                 <hr>
