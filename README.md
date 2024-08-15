@@ -9,9 +9,9 @@ A webapp for food ordering built with PHP and MySQL and front end implemented wi
 
 ### Prerequisites
 
-* PHP Development Server
-* MySQL Server
-* Configure the XAMPP server to run on port 8080
+* PHP
+* MySQL Community Server
+
 
 ### Installation
 
