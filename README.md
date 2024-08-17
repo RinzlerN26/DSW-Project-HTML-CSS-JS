@@ -24,12 +24,12 @@ A webapp for food ordering built with PHP and MySQL and front end implemented wi
    ```
 3. Run MySQL command line client and execute the sql scripts.
    
-  ```sh
-  source ${fileDirname}\SQLScripts\Food.sql
-  source ${fileDirname}\SQLScripts\Cart1.sql
-  source ${fileDirname}\SQLScripts\Cart2.sql
-  source ${fileDirname}\SQLScripts\Cart3.sql
-  source ${fileDirname}\SQLScripts\Cart4.sql
+   ```sh
+   source ${fileDirname}\SQLScripts\Food.sql
+   source ${fileDirname}\SQLScripts\Cart1.sql
+   source ${fileDirname}\SQLScripts\Cart2.sql
+   source ${fileDirname}\SQLScripts\Cart3.sql
+   source ${fileDirname}\SQLScripts\Cart4.sql
    ```
 3. Start PHP development server.
    
